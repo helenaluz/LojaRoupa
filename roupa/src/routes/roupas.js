@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import './roupas.css'
 
 export default function Roupas() {
 
@@ -17,13 +18,17 @@ export default function Roupas() {
     useEffect(()=>{getData()},[])
   
     return (
-      <div>
+      <div className='d-flex flex-wrap'>
         {ListaProducts.map(product => (
           <div key={product.id}>
+            <div className="card m-1" >
             <img src={product.image} alt={product.title} />
-            <p>{product.title}</p>
-            <p>${product.price}</p>
-            <Link to={`/roupas/${product.id}`}>Editar</Link>
+              <div className="card-body">
+              <h4>{product.title}</h4>
+              <p>R${product.price}</p>
+              <Link className='btn btn-primary' to={`/roupas/${product.id}`}>Ver mais</Link>
+              </div>
+            </div>
           </div>
         ))}
       </div>
@@ -33,4 +38,3 @@ export default function Roupas() {
   
 
 
- 

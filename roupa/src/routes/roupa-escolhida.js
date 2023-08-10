@@ -28,12 +28,16 @@ export default function Escolida() {
 
   return (
     <div>
-      <p>{titulo}</p>
-      <p>${preco}</p>
-      <p>{descricao}</p>
-      <p>{categoria}</p>
-      <img src={img} alt={titulo} />
-      <p>Nota: {nota}</p>
+      <div className="card mb-3 d-inline ">
+        <img src={img} alt={titulo} />
+        <div className="card-body">
+          <h5 className="card-title">{titulo}</h5>
+          <p className="card-text">{descricao}</p>
+          <p className="card-text">Categoria: {categoria} | Nota: {nota}</p>
+          <p>R${preco}</p>
+          <button className="btn btn-success">Comprar</button>
+        </div>
+      </div> 
     </div>
   );
 }

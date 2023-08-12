@@ -5,6 +5,11 @@ import './roupas.css'
 export default function Roupas() {
 
   const [ListaProducts, setProducts] = useState([]); 
+  const [homem, setHomem] = useState([]); 
+  const [mulher, setMulher] = useState([]); 
+  const [joias, setjoais] = useState([]); 
+  const [eletro, setEletro] = useState([]); 
+  const [selecionado, setSelecionado] = useState(null);
   
   function getData(){
     fetch('https://fakestoreapi.com/products')
@@ -13,12 +18,31 @@ export default function Roupas() {
     .catch(error => console.log(error))
 }
 
+function filtro(){
+  fetch('https://fakestoreapi.com/products')
+  .then(data => data.json())
+  .then(response => {
+    if(selecionado === null) setProducts(response)
+    else {
+      const filtrado = response.filter(product => product.category === selecionado)
+      setProducts(filtrado)}
+  })
+}
+
     
 
-    useEffect(()=>{getData()},[])
+useEffect(() => { filtro();}, [selecionado]);
   
     return (
-      <div className='d-flex flex-wrap'>
+      <div>
+      <div className='d-flex justify-content-around mt-2 mb-2'>
+        <button className="btn btn-success" onClick={() => setSelecionado("men's clothing")}>Masculino</button>
+        <button className="btn btn-success" onClick={() => setSelecionado("women's clothing")}>Feminino</button>
+        <button className="btn btn-success" onClick={() => setSelecionado("jewelery")}>Jóias</button>
+        <button className="btn btn-success" onClick={() => setSelecionado("electronics")}>Eletronico</button>
+        <button className="btn btn-success" onClick={() => setSelecionado(null)}>Reset</button>
+      </div>
+      <div className='d-flex flex-wrap justify-content-center'>
         {ListaProducts.map(product => (
           <div key={product.id}>
             <div className="card m-1" >
@@ -31,6 +55,7 @@ export default function Roupas() {
             </div>
           </div>
         ))}
+      </div>
       </div>
     );
   

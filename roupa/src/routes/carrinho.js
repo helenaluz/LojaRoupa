@@ -17,6 +17,7 @@ export default function Carrinho(){
     useEffect(() => { getData();}, );
     return(
         <div>
+            <Link className='btn btn-primary' to={`/pagamento`}>Pagar</Link>
             <div className='d-flex flex-wrap justify-content-center'>
             {ListaProducts.map(product => (
             <div key={product.id}>
@@ -25,7 +26,6 @@ export default function Carrinho(){
               <div className="card-body">
               <h4>{product.title}</h4>
               <p>R${product.price}</p>
-              <Link className='btn btn-primary' to={`/roupas/${product.id}`}>Ver mais</Link>
             </div>
             </div>
             </div>

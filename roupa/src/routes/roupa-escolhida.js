@@ -8,23 +8,43 @@ export default function Escolida() {
   const [img, setImg] = useState("");
   const [nota, setNota] = useState("");
   const [preco, setPreco] = useState("");
+  const [id, setId] = useState("");
   const { idroupa } = useParams();
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${idroupa}`)
       .then(response => response.json())
       .then(data => {
+        setId(data.id);
         setTitulo(data.title);
         setDescricao(data.description);
         setCategoria(data.category);
         setImg(data.image);
-        setNota(data.rating.rate); // Assuming 'rating' is an object with 'rate' and 'count'
+        setNota(data.rating.rate);
         setPreco(data.price);
       })
       .catch(error => {
         console.error("Error fetching data:", error);
       });
   }, [idroupa]);
+
+  function addCarrinho() {
+    fetch('http://localhost:3000/carrinho', {
+      method: 'POST',
+      body: JSON.stringify({ id: idroupa, title:titulo, description: descricao, category: categoria, image: img, rating: nota, price: preco }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log("Product added to cart:", data);
+      })
+      .catch(error => {
+        console.error("Error adding product to cart:", error);
+      });
+  }
+  
 
   return (
     <div>
@@ -35,7 +55,7 @@ export default function Escolida() {
           <p className="card-text">{descricao}</p>
           <p className="card-text">Categoria: {categoria} | Nota: {nota}</p>
           <p>R${preco}</p>
-          <button className="btn btn-success">Comprar</button>
+          <button onClick={addCarrinho}>Adicionar ao Carrinho</button>
         </div>
       </div> 
     </div>

@@ -18,6 +18,7 @@ function App() {
                     <Link className="nav-link active"  to="/home">Início</Link>
                     <Link className="nav-link" to="/roupas"> Roupas </Link>
                     <Link className='nav-link' to="/cadastro">Cadastro</Link>
+                    <Link className='nav-link' to="/carrinho">Meu carrinho</Link>
                     </div>
                   </div>
                 </div>

@@ -11,6 +11,7 @@ import Casa from './routes/incial';
 import Roupas from './routes/roupas';
 import Escolida from './routes/roupa-escolhida';
 import Cadastro from './routes/Cadastro';
+import Carrinho from './routes/carrinho';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       {
         path:"/cadastro",
         element: <Cadastro/>
+      },
+      {
+        path:'/carrinho',
+        element: <Carrinho/>
       }
     ]
   }

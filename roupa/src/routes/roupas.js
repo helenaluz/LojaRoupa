@@ -5,10 +5,6 @@ import './roupas.css'
 export default function Roupas() {
 
   const [ListaProducts, setProducts] = useState([]); 
-  const [homem, setHomem] = useState([]); 
-  const [mulher, setMulher] = useState([]); 
-  const [joias, setjoais] = useState([]); 
-  const [eletro, setEletro] = useState([]); 
   const [selecionado, setSelecionado] = useState(null);
   
   function getData(){

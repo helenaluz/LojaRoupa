@@ -37,12 +37,6 @@ export default function Escolida() {
       }
     })
       .then(response => response.json())
-      .then(data => {
-        console.log("Product added to cart:", data);
-      })
-      .catch(error => {
-        console.error("Error adding product to cart:", error);
-      });
   }
   
 
@@ -55,7 +49,7 @@ export default function Escolida() {
           <p className="card-text">{descricao}</p>
           <p className="card-text">Categoria: {categoria} | Nota: {nota}</p>
           <p>R${preco}</p>
-          <button onClick={addCarrinho}>Adicionar ao Carrinho</button>
+          <button className="btn btn-primary "onClick={addCarrinho}>Adicionar ao Carrinho</button>
         </div>
       </div> 
     </div>

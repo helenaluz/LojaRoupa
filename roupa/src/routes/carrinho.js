@@ -14,7 +14,15 @@ export default function Carrinho(){
         .then(response =>setProducts(response))
         .catch(error => console.log(error))
     }
+       function DeleteData(id) {
+        fetch(`http://localhost:3000/carrinho/${id}`, {
+          method: 'DELETE',
+          headers: {'Content-Type': 'application/json'}
+     })
+       .then(() => getData()) 
+   }
     useEffect(() => { getData();}, );
+
     return(
         <div>
             <Link className='btn btn-primary' to={`/pagamento`}>Pagar</Link>
@@ -26,6 +34,7 @@ export default function Carrinho(){
               <div className="card-body">
               <h4>{product.title}</h4>
               <p>R${product.price}</p>
+            <button onClick={() => DeleteData(product.id)} className='btn btn-danger'>Remover do carrinho</button>
             </div>
             </div>
             </div>

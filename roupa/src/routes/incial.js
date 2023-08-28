@@ -10,13 +10,13 @@ export default function Casa(){
             </div>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                <img src="..." className="d-block w-100" alt="..."/>
+                    <img src="https://img.freepik.com/free-photo/beautiful-african-model-with-perfect-curly-hairs-elegant-orange-blouse-silk-pants-sitting-vintage-chair-beige-wall_273443-4089.jpg" className="d-block w-100 img-fluid" alt="..." style={{objectFit: 'cover', maxHeight: '400px'}} />
                 </div>
                 <div className="carousel-item">
-                <img src="..." className="d-block w-100" alt="..."/>
+                    <img src="https://www.themodelskit.co.uk/wp-content/uploads/2021/12/shutterstock_1855048690.jpg" className="d-block w-100 img-fluid" alt="..." style={{objectFit: 'cover', maxHeight: '400px'}} />
                 </div>
                 <div className="carousel-item">
-                <img src="..." className="d-block w-100" alt="..."/>
+                    <img src="https://img.freepik.com/free-photo/two-young-beautiful-brunette-girls-nice-trendy-summer-similar-suits-clothes_158538-15176.jpg" className="d-block w-100 img-fluid" alt="..." style={{objectFit: 'cover', maxHeight: '400px'}} />
                 </div>
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

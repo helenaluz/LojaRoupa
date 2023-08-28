@@ -15,10 +15,9 @@ function App() {
                   </button>
                   <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                    <Link className="nav-link active"  to="/home">Início</Link>
                     <Link className="nav-link" to="/roupas"> Roupas </Link>
-                    <Link className='nav-link' to="/cadastro">Cadastro</Link>
                     <Link className='nav-link' to="/carrinho">Meu carrinho</Link>
+                    <Link className='nav-link' to="/login">Login</Link>
                     </div>
                   </div>
                 </div>

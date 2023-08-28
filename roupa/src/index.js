@@ -13,6 +13,8 @@ import Escolida from './routes/roupa-escolhida';
 import Cadastro from './routes/Cadastro';
 import Carrinho from './routes/carrinho';
 import Pagamento from './routes/pagamento';
+import LoginContext from './Context/LoginContext';
+import Login from './routes/Login';
 
 const router = createBrowserRouter([
   {
@@ -20,7 +22,7 @@ const router = createBrowserRouter([
     element: <App/>,
     children:[
       {
-        path: "/home",
+        index: true,
         element: <Casa/>,
       },
       {
@@ -42,6 +44,10 @@ const router = createBrowserRouter([
       {
         path:'/pagamento',
         element:  <Pagamento/>
+      },
+      {
+        path:'/login',
+        element: <Login/>
       }
     ]
   }
@@ -49,9 +55,9 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <LoginContext.Provider  value={localStorage.getItem('login')} >
+        <RouterProvider router={router}/>
+    </LoginContext.Provider> 
 );
 
 // If you want to start measuring performance in your app, pass a function

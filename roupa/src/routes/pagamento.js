@@ -1,8 +1,23 @@
 import React, { useState, useEffect } from 'react';
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import LoginContext from '../Context/LoginContext';
 
 export default function Pagamento() {
     const [final, setFinal] = useState([]);
     const [listaProducts, setListaProducts] = useState([]);
+    const navigate = useNavigate();
+    const login = useContext(LoginContext)
+
+    useEffect(() => {
+
+        if (!login) {
+            alert("Você precisa realizar o login para concluir o pagamento!")
+            navigate('/login');
+        }
+    }, [login, navigate]);
+
+
     let money = 0;
     useEffect(() => {
         fetch('http://localhost:3000/carrinho')

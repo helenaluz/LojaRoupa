@@ -1,3 +1,54 @@
 {
-  "carrinho": []
+  "carrinho": [
+    {
+      "id": "4",
+      "title": "Mens Casual Slim Fit",
+      "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+      "rating": 2.1,
+      "price": 15.99
+    },
+    {
+      "id": "5",
+      "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+      "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+      "category": "jewelery",
+      "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+      "rating": 4.6,
+      "price": 695
+    },
+    {
+      "id": "16",
+      "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+      "description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
+      "category": "women's clothing",
+      "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
+      "rating": 2.9,
+      "price": 29.95
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "seu_email1@example.com",
+      "username": "seu_username1",
+      "password": "sua_senha1",
+      "name": {
+        "firstname": "Seu Primeiro Nome1",
+        "lastname": "Seu Último Nome1"
+      },
+      "address": {
+        "city": "Sua Cidade1",
+        "street": "Sua Rua1",
+        "number": "123",
+        "zipcode": "12345",
+        "geolocation": {
+          "lat": "-37.3159",
+          "long": "81.1496"
+        }
+      },
+      "phone": "123-456-7890"
+    }
+  ]
 }
